@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardMaker - Personal Quote & Affirmation Card Maker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ CardMaker</h1>
+            <p class="subtitle">Create Beautiful Personal Quote & Affirmation Cards</p>
+        </header>
+
+        <main>
+            <div class="content-wrapper">
+                <!-- Card Creation Form -->
+                <section class="form-section">
+                    <h2>Create Your Card</h2>
+                    <form id="cardForm">
+                        <div class="form-group">
+                            <label for="cardType">Card Type:</label>
+                            <select id="cardType" required>
+                                <option value="quote">Quote Card</option>
+                                <option value="affirmation">Affirmation Card</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardText">Text:</label>
+                            <textarea id="cardText" placeholder="Enter your quote or affirmation..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardAuthor">Author/Attribution:</label>
+                            <input type="text" id="cardAuthor" placeholder="Leave blank if not applicable">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bgColor">Background Color:</label>
+                            <input type="color" id="bgColor" value="#667eea">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="textColor">Text Color:</label>
+                            <input type="color" id="textColor" value="#ffffff">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fontSize">Font Size:</label>
+                            <input type="range" id="fontSize" min="14" max="48" value="28">
+                            <span id="fontSizeDisplay">28px</span>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Create Card</button>
+                    </form>
+                </section>
+
+                <!-- Card Preview -->
+                <section class="preview-section">
+                    <h2>Preview</h2>
+                    <div id="cardPreview" class="card-preview">
+                        <div class="card" id="previewCard">
+                            <p class="card-text">Your card will appear here...</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Cards Gallery -->
+            <section class="gallery-section">
+                <h2>My Cards</h2>
+                <div class="controls">
+                    <button id="exportAllBtn" class="btn-secondary">Export All as ZIP</button>
+                    <button id="clearAllBtn" class="btn-secondary btn-danger">Clear All</button>
+                </div>
+                <div id="cardsGallery" class="cards-gallery">
+                    <p class="empty-state">No cards created yet. Create your first card above!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 CardMaker. Create with love. ✨</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
